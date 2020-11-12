@@ -10,29 +10,17 @@
             type="com.example.belajarmvvm.viewmodels.MainViewModel"/>
     </data>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
+        android:id="@+id/layoutMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPlace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{main.nim}"
-        />
+            tools:listitem="@layout/item_place"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{main.nama}"
-        />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{main.jurusan}"
-        />
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </layout>

@@ -6,7 +6,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.belajarmvvm.R
 import com.example.belajarmvvm.databinding.ActivityMainBinding
-import com.example.belajarmvvm.models.Mahasiswa
 import com.example.belajarmvvm.viewmodels.MainViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         binding.main = viewModel
 
-        val mhs = Mahasiswa("1901465525", "Jason anggarah", "Computer Science")
-        viewModel.setData(mhs)
+       viewModel.getListPlace()
     }
 }

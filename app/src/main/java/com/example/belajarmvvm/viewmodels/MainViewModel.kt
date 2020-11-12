@@ -1,18 +1,26 @@
 package com.example.belajarmvvm.viewmodels
 
 import android.app.Application
-import androidx.databinding.ObservableField
 import androidx.lifecycle.AndroidViewModel
-import com.example.belajarmvvm.models.Mahasiswa
+import androidx.lifecycle.MutableLiveData
+import com.example.belajarmvvm.MainRepository
+import com.example.belajarmvvm.models.listPlaceResponseModel
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
-    var nim     : ObservableField<String> = ObservableField()
-    var nama    : ObservableField<String> = ObservableField()
-    var jurusan : ObservableField<String> = ObservableField()
+    private val repository = MainRepository()
+    var listPlace: MutableLiveData<listPlaceResponseModel> = MutableLiveData()
+    var error: MutableLiveData<Throwable> = MutableLiveData()
 
-    fun setData(mahasiswa: Mahasiswa){
-        nim.set(mahasiswa.nim)
-        nama.set(mahasiswa.nama)
-        jurusan.set(mahasiswa.jurusan)
+    fun getListPlace(){
+        repository.requestListPlace({
+            listPlace.postValue(it)
+        },{
+            error.postValue(it)
+        })
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        repository.onDestroy()
     }
 }
