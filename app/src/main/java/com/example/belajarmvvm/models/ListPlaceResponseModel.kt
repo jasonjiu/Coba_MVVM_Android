@@ -4,7 +4,7 @@ import android.telephony.cdma.CdmaCellLocation
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class listPlaceResponseModel (
+data class ListPlaceResponseModel (
     @SerializedName("status_code") @Expose var statusCode: Int,
     @SerializedName("data") @Expose var data: MutableList<PlaceModel>
 ){

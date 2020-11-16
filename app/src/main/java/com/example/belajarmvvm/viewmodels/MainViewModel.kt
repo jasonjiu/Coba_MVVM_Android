@@ -3,12 +3,12 @@ package com.example.belajarmvvm.viewmodels
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.example.belajarmvvm.MainRepository
-import com.example.belajarmvvm.models.listPlaceResponseModel
+import com.example.belajarmvvm.API.MainRepository
+import com.example.belajarmvvm.models.ListPlaceResponseModel
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val repository = MainRepository()
-    var listPlace: MutableLiveData<listPlaceResponseModel> = MutableLiveData()
+    var listPlace: MutableLiveData<ListPlaceResponseModel> = MutableLiveData()
     var error: MutableLiveData<Throwable> = MutableLiveData()
 
     fun getListPlace(){

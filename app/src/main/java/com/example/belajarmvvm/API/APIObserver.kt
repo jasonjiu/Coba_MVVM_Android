@@ -7,7 +7,7 @@ import java.util.*
 
 abstract class APIObserver<T> constructor(private val compositeDisposable: CompositeDisposable): Observer<T> {
     override fun onComplete() {
-        TODO("Not yet implemented")
+        //todo
     }
 
     override fun onSubscribe(d: Disposable) {
